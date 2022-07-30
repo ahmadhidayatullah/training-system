@@ -1,5 +1,5 @@
 const { body } = require('express-validator');
-const { default: mongoose } = require('mongoose');
+const mongoose = require('mongoose')
 const Skill = require('../skills/model')
 const User = require('../users/model')
 
@@ -22,29 +22,27 @@ exports.validate = (method) => {
                     })
                 }),
 
-                body('participants').custom((participants, {req}) => {
-                    //get request skill
-                    let skill = mongoose.Types.ObjectId(req.body.skill)
-                    //validation same skill with participants data
+                body('participants').custom(async (participants, {req}) => {
+                    
+                    let skill = await mongoose.Types.ObjectId(req.body.skill)
+
                     participants.forEach(async (participant) => {
                         let user = await User.findById(participant).exec()
-                        console.log(participant);
                         
                         if (!user) {
                             throw new Error(
                                 `${participant} doesn't exists`
                             )
                         }
-                        // // updateconsole.log(`${user.skill} with id ${participant}`);
+
                         // //todo: handling when user skill undifined
-                        console.log(user.skill);
-                        console.log();
-                        if (user.skill != skill) {
+                        if (user.skill.toString() != skill.toString()) {
                             throw new Error(
                                 `${participant} doesn't match with the skill`
                             )
                         }
                     });
+
 
                     return false
                 }),
@@ -89,23 +87,26 @@ exports.validate = (method) => {
                         return Promise.reject(`Skill doesn't exists`);
                     })
                 }),
-
-                body('participants').custom((participants, {req}) => {
+ 
+                body('participants').custom(async (participants, {req}) => {
                     //get request skill
-                    let skill = req.body.skill
+                    let skill = await mongoose.Types.ObjectId(req.body.skill)
 
                     //validation same skill with participants data
                     participants.forEach(async (participant) => {
                         let user = await User.findById(participant).exec()
                         
                         if (!user) {
-                            return Promise.reject(`${participant} doesn't exists`)
+                            throw new Error(
+                                `${participant} doesn't exists`
+                            )
                         }
-                        // updateconsole.log(`${user.skill} with id ${participant}`);
 
-                        //todo: handling when user skill undifined
-                        if (user.skill != skill ) {
-                            return Promise.reject(`${participant} doesn't match with the skill`)
+                        // //todo: handling when user skill undifined
+                        if (user.skill.toString() != skill.toString()) {
+                            throw new Error(
+                                `${participant} doesn't match with the skill`
+                            )
                         }
                     });
 

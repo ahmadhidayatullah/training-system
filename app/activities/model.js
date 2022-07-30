@@ -27,8 +27,7 @@ let activitySchema = mongoose.Schema({
   participants: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Users'
-  }],
-
+  }]
 }, { timestamps: true })
 
 activitySchema.plugin(mongoosePaginate);
