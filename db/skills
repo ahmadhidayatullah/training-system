@@ -1,0 +1,49 @@
+[{
+  "_id": {
+    "$oid": "5e96cbe292b97300fc901111"
+  },
+  "name": "Skill 1",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658689819246"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658689819246"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5e96cbe292b97300fc901112"
+  },
+  "name": "Skill 2",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658689819246"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658689819246"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "5e96cbe292b97300fc901113"
+  },
+  "name": "Skill 3",
+  "__v": 0,
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658689819247"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658689819247"
+    }
+  }
+}]

@@ -1,0 +1,67 @@
+[{
+  "_id": {
+    "$oid": "5e96cbe292b97300fc903345"
+  },
+  "email": "admin@mail.com",
+  "name": "admin",
+  "username": "admin",
+  "password": "$2a$10$MNXsIDBPwO87OZ.FXAPBj.qRNKYX4HTG48u/7nslPyD9UOUWWSUru",
+  "profile": "board",
+  "skill": {
+    "$oid": "5e96cbe292b97300fc901113"
+  },
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658689819306"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658689819306"
+    }
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "62dd9e3a41f35edb2aaf7a81"
+  },
+  "email": "ahmad@mail.com",
+  "name": "Ahmad",
+  "username": "ahmad",
+  "password": "$2a$10$6f/jBfhvr1T.eR.0uqJfAOaT0KcRkWp/cfeaEJNgSfvxQgS6b1lYW",
+  "profile": "expert",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658691130953"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658691130953"
+    }
+  },
+  "__v": 0,
+  "skill": {
+    "$oid": "5e96cbe292b97300fc901111"
+  }
+},{
+  "_id": {
+    "$oid": "62e00f2b2a6023e044359c8b"
+  },
+  "email": "alberto@mail.com",
+  "name": "Alberto",
+  "username": "alberto",
+  "password": "$2a$10$Updr5w9VaMOnhdmLYSTzAekQw.MiEmKfrAxSZSlRW3RcNM9LaKuo6",
+  "profile": "expert",
+  "createdAt": {
+    "$date": {
+      "$numberLong": "1658851115872"
+    }
+  },
+  "updatedAt": {
+    "$date": {
+      "$numberLong": "1658851115872"
+    }
+  },
+  "__v": 0
+}]
