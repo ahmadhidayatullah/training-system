@@ -6,29 +6,30 @@ module.exports = {
     try {
 
       const { skill_id } = req.params
-      // console.log(skill_id);
+
       const myCustomLabels = {
-        totalDocs: 'itemCount',
-        docs: 'itemsList',
-        limit: 'perPage',
+        totalDocs: 'totalItems',
+        docs: 'activities',
+        limit: 'pageSize',
         page: 'currentPage',
         nextPage: 'next',
         prevPage: 'prev',
-        totalPages: 'pageCount',
+        totalPages: 'totalPages',
         pagingCounter: 'slNo',
-        meta: 'paginator',
+        meta: 'paginator'
       };
 
       const query = {
-        skill : skill_id
+        skill: skill_id
       }
-      
+
       const options = {
         page: 1,
         limit: 2,
         customLabels: myCustomLabels,
+        populate: ['participants', 'skill']
       };
-      
+
       let activities = await Activity.paginate(query, options);
 
       res.status(200).json({ activities })
@@ -76,7 +77,7 @@ module.exports = {
       }
 
       const { ID } = req.params
-      
+
       const { skill, title, description, start_date, end_date, participants } = req.body
 
       let data = await Activity.findByIdAndUpdate(
