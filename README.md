@@ -13,7 +13,7 @@ npm run dev
 
 ### configuration
 * Fill the .env file
-* run node seeder.js
+* import collection from folder db
 ```
 node seed.js
 ```
